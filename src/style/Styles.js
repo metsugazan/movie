@@ -5,18 +5,21 @@ import Constants from '../Constants';
 const Styles = StyleSheet.create({
   sectionBg: {
     backgroundColor: Constants.baseColor,
-    flex: 1
+    flex: 1,
   },
   title: {
     fontSize: 22,
     textAlign: 'center',
-    color: Constants.fadedColor,
+    fontWeight:'bold',
+    color: Constants.secondaryColor,
     margin: 10,
   },
   heading: {
-    fontSize: 19,
+    fontSize: 16,
     color: Constants.fadedColor,
     margin: 10,
+    fontWeight:'bold',
+    alignSelf:'center',
   },
   posterImage: {
     height: 250,
@@ -27,6 +30,7 @@ const Styles = StyleSheet.create({
     color: Constants.textColor,
     width: 170,
     textAlign: 'center',
+    fontWeight: 'bold',
     marginVertical: 10,
     fontSize: 16,
   },
@@ -57,27 +61,43 @@ const Styles = StyleSheet.create({
   details: {
     color: Constants.secondaryColor,
     fontSize: 15,
-    marginLeft: 10,
+    marginLeft: 5,
     fontWeight: 'bold',
+    alignSelf:'center',
   },
   detailsContainer: {
-    display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginVertical: 20,
   },
   genreContainer: {
-    borderWidth: 1,
-    borderRadius: 5,
-    borderColor: Constants.textColor,
+    borderWidth: 2,
+    borderRadius: 10,
+    borderColor: Constants.secondaryColor,
     paddingHorizontal: 10,
     paddingVertical: 5,
     marginHorizontal: 10,
+    marginBottom: 20
   },
   genre: {
     color: Constants.textColor,
     fontSize: 16,
+    fontWeight: 'bold',
   },
+  searchbar: {
+    height: 45,
+    flexDirection: 'row-reverse',
+    borderRadius: 20,
+    marginHorizontal: 20,
+    shadowColor: 'lightgray',
+    shadowOffset: {
+        width: 0,
+        height: 5,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 6.84,
+    elevation: 5
+}
 });
 
 export default Styles;

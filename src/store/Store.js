@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit'
-import favReducer from './data/favReducer'
+import FavReducer from './FavReducer'
 
 export default configureStore({
     reducer: {
-        favReducer: favReducer,
+        FavReducer: FavReducer,
     },
 })

@@ -48,7 +48,7 @@ const displayMovies = ({ item }, props) => {
         style={Styles.posterImage}
       />
       {console.log('-----------' + item.original_title + '-----------')}
-      <Text style={Styles.movieTitle}>{item.original_title}</Text>
+      <Text style={Styles.movieTitle}>{item.title}</Text>
     </TouchableOpacity>
   );
 };

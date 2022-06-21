@@ -13,6 +13,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 
 import Provider from '@reduxjs/toolkit';
+import { store } from './src/store/Store';
 import AppNavigation from './src/navigation/AppNavigation';
 
 
@@ -32,12 +33,12 @@ const theme = {
 export default function App() {
 
   return (
-    <SafeAreaProvider>
+    /*<Provider store={store}>*/
     <PaperProvider theme={theme}>
       <StatusBar backgroundColor="#000" barStyle="light-content" />
     <AppNavigation />
     </PaperProvider>
-    </SafeAreaProvider>
+   /* </Provider>*/
   );
 }
 

@@ -8,9 +8,14 @@ import {
   View,
 } from 'react-native';
 
+import Styles from '../style/Styles';
+import Constants from '../Constants';
+
 export default function FavScreen() {
 
     return (
-<Text>favscreen</Text>
+      <View style={Styles.sectionBg}>
+      <Text style={Styles.title}>FavScreen</Text>
+    </View>
     );
   }

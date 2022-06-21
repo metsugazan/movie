@@ -11,6 +11,7 @@ import Styles from '../style/Styles';
 import Icon from 'react-native-vector-icons/Entypo';
 import Constants from '../Constants';
 import Loader from '../components/Loader';
+import moment from 'moment-timezone';
 
 const DetailScreen = props => {
   const [loading, setLoading] = useState(true);
@@ -48,7 +49,7 @@ const DetailScreen = props => {
               style={Styles.imageBg}
             />
           </View>
-          <Text style={Styles.detailsMovieTitle}>{details.original_title}</Text>
+          <Text style={Styles.detailsMovieTitle}>{details.title}</Text>
 
           <Text style={Styles.title}>Synopsis</Text>
           <Text style={Styles.overview}>{details.overview}</Text>
@@ -68,10 +69,14 @@ const DetailScreen = props => {
               <Text style={Styles.heading}>Date de sortie</Text>
               <Text style={Styles.details}>{details.release_date}</Text>
             </View>
+            <View>
+              <Text style={Styles.heading}>Popularité</Text>
+              <Text style={Styles.details}>{details.popularity} / 100</Text>
+            </View>
           </View>
 
           <Text style={Styles.heading}>Genre</Text>
-          <View style={{ flexDirection: 'row'}}>
+          <View style={{ flexDirection: 'row', alignSelf:'center'}}>
             {getGenre()}
           </View>
         </View>
