@@ -12,7 +12,8 @@ const Styles = StyleSheet.create({
     textAlign: 'center',
     fontWeight:'bold',
     color: Constants.secondaryColor,
-    margin: 10,
+    marginHorizontal: 10,
+    marginTop: 10,
   },
   heading: {
     fontSize: 16,
@@ -85,10 +86,11 @@ const Styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   searchbar: {
-    height: 45,
+    height: 40,
     flexDirection: 'row-reverse',
     borderRadius: 20,
     marginHorizontal: 20,
+    marginTop: 10,
     shadowColor: 'lightgray',
     shadowOffset: {
         width: 0,

@@ -4,13 +4,16 @@ import { POSTER_IMAGE } from '../config';
 import { GET, Search } from '../API';
 import Styles from '../style/Styles';
 
-const TrendMoviesComponents = props => {
-  const [movies, setMovies] = useState();
+
+
+
+export const SearchMoviesComponents = props => {
+  const [Searchmovies, setSearchMovies] = useState();
 
   useEffect(() => {
     const getMovies = async () => {
-      const data = await GET(props.url);
-      setMovies(data.results);
+      const data = await Search(props.query);
+      setSearchMovies(data.results);
     };
 
     getMovies();
@@ -18,12 +21,12 @@ const TrendMoviesComponents = props => {
 
   return (
     <View>
-      {console.log(movies)}
+      {console.log(Searchmovies)}
       <View>
         <Text style={Styles.title}>{props.title}</Text>
         <FlatList
           keyExtractor={item => item.id}
-          data={movies?.slice(0, 5)}
+          data={Searchmovies}
           numColumns={2}
 
           style={{ alignSelf: 'center', marginVertical: 10 }}
@@ -33,7 +36,6 @@ const TrendMoviesComponents = props => {
     </View>
   );
 };
-
 
 
 const displayMovies = ({ item }, props) => {
@@ -53,4 +55,4 @@ const displayMovies = ({ item }, props) => {
   );
 };
 
-export default TrendMoviesComponents;
+export default SearchMoviesComponents;
