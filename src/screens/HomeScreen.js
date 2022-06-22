@@ -4,7 +4,9 @@ import SliderComponent from '../components/SliderComponent';
 import Styles from '../style/Styles';
 import TrendMoviesComponents from '../components/TrendMoviesComponents';
 
+
 const HomeScreen = props => {
+
   return (
     <View style={Styles.sectionBg}>
       <SliderComponent navigation={props.navigation} />

@@ -1,19 +1,10 @@
 import React, {useState} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+import {StatusBar} from 'react-native';
 
 import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
 
-
-import Provider from '@reduxjs/toolkit';
-import { store } from './src/store/Store';
+import { Provider } from 'react-redux'
+import { Store } from './src/store/Store';
 import AppNavigation from './src/navigation/AppNavigation';
 
 
@@ -33,12 +24,12 @@ const theme = {
 export default function App() {
 
   return (
-    /*<Provider store={store}>*/
+    //<Provider store={Store}>
     <PaperProvider theme={theme}>
       <StatusBar backgroundColor="#000" barStyle="light-content" />
     <AppNavigation />
     </PaperProvider>
-   /* </Provider>*/
+   //</Provider>
   );
 }
 

@@ -8,11 +8,6 @@ import { Searchbar } from 'react-native-paper';
 import {API_KEY, BASE_URL, POSTER_IMAGE } from '../config';
 
 
-
-
-
-
-
 const SearchScreen = props => {
 
   const [query, setSearchQuery] = useState(``);

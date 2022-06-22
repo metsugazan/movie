@@ -1,9 +1,5 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
   Text,
   View,
 } from 'react-native';
@@ -11,11 +7,14 @@ import {
 import Styles from '../style/Styles';
 import Constants from '../Constants';
 
+
 export default function FavScreen() {
 
-    return (
-      <View style={Styles.sectionBg}>
-      <Text style={Styles.title}>FavScreen</Text>
+  return (
+    <View style={Styles.sectionBg}>
+      <Text style={Styles.title}>Vos favoris</Text>
+
+
     </View>
-    );
-  }
+  );
+}

@@ -7,7 +7,7 @@ export const favSlice = createSlice({
   },
   reducers: {
     addfav: (state,action) => {
-        state.value.push({id:action.id,title:action.payload.name,img:action.payload.picture,metascore:action.payload.metascore,synopsis:action.payload.synopsis})
+        state.value.push({id:action.id,title:action.payload.title,poster_path:action.payload.poster_path,popularity:action.payload.popularity,overview:action.payload.overview})
     },
     removefav: (state,action) => {
         state.value = state.value.filter(item => item.title !== action.payload)

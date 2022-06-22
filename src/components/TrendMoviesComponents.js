@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { View, Image, FlatList, Text, TouchableOpacity } from 'react-native';
 import { POSTER_IMAGE } from '../config';
-import { GET, Search } from '../API';
+import { GET } from '../API';
 import Styles from '../style/Styles';
+import Icon from 'react-native-vector-icons/MaterialIcons';
+import Constants from '../Constants';
 
 const TrendMoviesComponents = props => {
   const [movies, setMovies] = useState();
@@ -37,6 +39,8 @@ const TrendMoviesComponents = props => {
 
 
 const displayMovies = ({ item }, props) => {
+
+
   return (
     <TouchableOpacity
       onPress={() => {
@@ -47,6 +51,12 @@ const displayMovies = ({ item }, props) => {
         source={{ uri: `${POSTER_IMAGE}${item.poster_path}` }}
         style={Styles.posterImage}
       />
+              <TouchableOpacity style={{position:'absolute', right:10, top:10, borderRadius:20, padding: 5, backgroundColor:Constants.baseColor }}       
+              onPress={() => {
+                props.navigation.push('Detail', { movieId: item.id });
+      }}>
+            <Icon name={"star"} size={26} color={Constants.secondaryColor} />
+        </TouchableOpacity>
       {console.log('-----------' + item.original_title + '-----------')}
       <Text style={Styles.movieTitle}>{item.title}</Text>
     </TouchableOpacity>
