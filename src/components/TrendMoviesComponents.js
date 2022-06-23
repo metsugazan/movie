@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { View, Image, FlatList, Text, TouchableOpacity } from 'react-native';
-import { POSTER_IMAGE } from '../config';
+import { View, FlatList, Text } from 'react-native';
 import { GET } from '../API';
 import Styles from '../style/Styles';
-import Icon from 'react-native-vector-icons/MaterialIcons';
-import Constants from '../Constants';
+
+
+import DisplayMoviesComponent from './DisplayMoviesComponent';
 
 const TrendMoviesComponents = props => {
   const [movies, setMovies] = useState();
@@ -27,40 +27,13 @@ const TrendMoviesComponents = props => {
           keyExtractor={item => item.id}
           data={movies?.slice(0, 5)}
           numColumns={2}
-
           style={{ alignSelf: 'center', marginVertical: 10 }}
-          renderItem={item => displayMovies(item, props)}
+          renderItem={item => DisplayMoviesComponent(item, props)}
         />
       </View>
     </View>
   );
 };
 
-
-
-const displayMovies = ({ item }, props) => {
-
-
-  return (
-    <TouchableOpacity
-      onPress={() => {
-        props.navigation.push('Detail', { movieId: item.id });
-      }}
-      style={{ marginHorizontal: 10 }}>
-      <Image
-        source={{ uri: `${POSTER_IMAGE}${item.poster_path}` }}
-        style={Styles.posterImage}
-      />
-              <TouchableOpacity style={{position:'absolute', right:10, top:10, borderRadius:20, padding: 5, backgroundColor:Constants.baseColor }}       
-              onPress={() => {
-                props.navigation.push('Detail', { movieId: item.id });
-      }}>
-            <Icon name={"star"} size={26} color={Constants.secondaryColor} />
-        </TouchableOpacity>
-      {console.log('-----------' + item.original_title + '-----------')}
-      <Text style={Styles.movieTitle}>{item.title}</Text>
-    </TouchableOpacity>
-  );
-};
 
 export default TrendMoviesComponents;

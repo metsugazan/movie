@@ -26,6 +26,7 @@ const Styles = StyleSheet.create({
     height: 250,
     width: 170,
     borderRadius: 10,
+    backgroundColor: Constants.fadedColor,
   },
   movieTitle: {
     color: Constants.textColor,
@@ -38,6 +39,12 @@ const Styles = StyleSheet.create({
   imageBg: {
     width: '100%',
     height: 250,
+    backgroundColor: Constants.fadedColor,
+  },
+  imageBgNull: {
+    width: '100%',
+    height: 340,
+    backgroundColor: Constants.fadedColor,
   },
   detailsMovieTitle: {
     fontSize: 28,
